@@ -2,7 +2,9 @@
 $logo = 'logo.svg';
 $name = 'Lukáš';
 $surName = 'Frajt';
-$age = '23';
+$bday = new DateTime('31.07.1997'); // Your date of birth
+$today = new Datetime(date('m.d.y'));
+$age = $today->diff($bday);
 $position = 'Accessibility developer';
 $company = 'SAP Concur';
 $city = 'Praha';
@@ -48,7 +50,8 @@ $address = "$street $propertyNumber/$orientationNumber, $city";
         <div class="col-sm-6">
             <div class="bc-firstname"><?php echo $name; ?></div>
             <div class="bc-surname"><?php echo $surName; ?></div>
-            <div class="bc-title"><?php echo $position ?></div>
+            <div class="bc-title"><?php echo $position; ?></div>
+            <div class="bc-age"><?php echo $age->y; ?> let</div>
         </div>
         <div class="col-sm-6 contacts">
             <div class="bc-address"><i class="fas fa-map-marker-alt"></i> <?php echo $address; ?></div>
